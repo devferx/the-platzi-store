@@ -1,9 +1,6 @@
-import { Navbar } from "@shared/components/Navbar";
+import { RouterProvider } from "react-router-dom";
+import { router } from "./router";
 
 export const App = () => {
-  return (
-    <main>
-      <Navbar />
-    </main>
-  );
+  return <RouterProvider router={router} />;
 };
