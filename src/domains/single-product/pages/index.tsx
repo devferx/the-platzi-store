@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { flushSync } from "react-dom";
 import { Navigate, useParams } from "react-router-dom";
 
 import { useProduct } from "@shared/hooks/useProduct";
@@ -12,6 +13,14 @@ export const SingleProductPage = () => {
     return <Navigate to="/" />;
   }
 
+  const handleImgClick = (idx: number) => {
+    document.startViewTransition(() => {
+      flushSync(() => {
+        setCurrImg(idx);
+      });
+    });
+  };
+
   return (
     <section className="mx-auto grid max-w-screen-2xl grid-cols-1 px-5">
       {isLoading && <div>Loading...</div>}
@@ -20,19 +29,20 @@ export const SingleProductPage = () => {
         <div className="grid grid-cols-1 gap-10  lg:grid-cols-[1fr,2fr]">
           <div>
             <img
+              className="single-prod-img"
               src={product.images[currImg]}
               alt={`${product.title} - photo ${currImg + 1}`}
             />
 
             <div className="mt-6 flex w-full justify-center gap-3">
               {product.images.map((img, idx) => (
-                <img
-                  className="w-20"
-                  key={img}
-                  src={img}
-                  alt={`${product.title} - photo ${idx + 1}`}
-                  onClick={() => setCurrImg(idx)}
-                />
+                <button key={img} onClick={() => handleImgClick(idx)}>
+                  <img
+                    className="w-20"
+                    src={img}
+                    alt={`${product.title} - photo ${idx + 1}`}
+                  />
+                </button>
               ))}
             </div>
           </div>
