@@ -11,3 +11,9 @@ export async function getProducts(page = 1): Promise<Product[]> {
 
   return data;
 }
+
+export async function getProduct(productId: string): Promise<Product> {
+  const { data } = await storeApi.get<Product>(`/products/${productId}`);
+
+  return data;
+}
