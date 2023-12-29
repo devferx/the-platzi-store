@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import { Product } from "@shared/models/product";
 
 interface CardProps {
@@ -6,7 +8,7 @@ interface CardProps {
 export const Card = ({ product }: CardProps) => {
   return (
     <div className="w-full max-w-sm rounded-lg border border-gray-200 bg-white shadow dark:border-gray-700 dark:bg-gray-800">
-      <a href="#">
+      <Link to={`/product/${product.id}`}>
         <div className="w-full p-2">
           <img
             className="w-full rounded-lg"
@@ -14,13 +16,16 @@ export const Card = ({ product }: CardProps) => {
             alt="product image"
           />
         </div>
-      </a>
+      </Link>
       <div className="px-5 pb-5">
-        <a href="#">
+        <Link
+          to={`/product/${product.id}`}
+          className="mt-1 block text-lg font-medium leading-tight text-black hover:underline dark:text-white"
+        >
           <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
             {product.title}
           </h5>
-        </a>
+        </Link>
         <div className="mb-5 mt-2.5">
           <span className=" text-gray-700 dark:text-gray-200">
             {product.description.length > 50
