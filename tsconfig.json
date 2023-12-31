@@ -11,6 +11,9 @@
       "@cart/*": [
         "./src/domains/cart/*"
       ],
+      "@store/*": [
+        "./src/store/*"
+      ]
     },
     "target": "ESNext",
     "lib": [

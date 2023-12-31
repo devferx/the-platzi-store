@@ -10,6 +10,7 @@ export default defineConfig({
       "@home": path.resolve(__dirname, "./src/domains/home"),
       "@cart": path.resolve(__dirname, "./src/domains/cart"),
       "@shared": path.resolve(__dirname, "./src/domains/shared"),
+      "@store": path.resolve(__dirname, "./src/store"),
     },
   },
 });
