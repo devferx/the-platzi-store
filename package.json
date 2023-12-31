@@ -8,8 +8,7 @@
     "build": "tsc && vite build",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "format": "prettier . --write",
-    "prepare": "husky install"
+    "format": "prettier . --write"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.0.1",
