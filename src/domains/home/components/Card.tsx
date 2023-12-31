@@ -1,11 +1,19 @@
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
 
 import { Product } from "@shared/models/product";
+import { addProduct } from "@store/cart/cartSlice";
 
 interface CardProps {
   product: Product;
 }
 export const Card = ({ product }: CardProps) => {
+  const dispatch = useDispatch();
+
+  const handleAddToCart = () => {
+    dispatch(addProduct(product));
+  };
+
   return (
     <div className="w-full max-w-sm rounded-lg border border-gray-200 bg-white shadow dark:border-gray-700 dark:bg-gray-800">
       <Link to={`/product/${product.id}`}>
@@ -40,6 +48,7 @@ export const Card = ({ product }: CardProps) => {
           <a
             href="#"
             className="rounded-lg bg-blue-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            onClick={handleAddToCart}
           >
             Add to cart
           </a>
