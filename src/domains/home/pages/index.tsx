@@ -6,7 +6,7 @@ import { useProducts } from "@shared/hooks/useProducts";
 
 export const Home = () => {
   const { page, nextPage, prevPage } = usePagination();
-  const { products, isLoading } = useProducts(page);
+  const { products, lastPage, isLoading } = useProducts(page);
 
   return (
     <section className="container mx-auto">
@@ -21,7 +21,12 @@ export const Home = () => {
           ))}
       </div>
 
-      <Pagination page={page} nextPage={nextPage} prevPage={prevPage} />
+      <Pagination
+        page={page}
+        lastPage={lastPage}
+        nextPage={nextPage}
+        prevPage={prevPage}
+      />
     </section>
   );
 };

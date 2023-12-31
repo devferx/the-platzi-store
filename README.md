@@ -40,7 +40,7 @@ Contributions, issues and feature requests are welcome!<br />Feel free to check 
 ## Next steps
 [] Fix the navbar position
 [] Add filters
-[] Fix infinity pagination
+[x] Fix infinity pagination
 [] Add cart view
 [] Add tests with vitest
 [] Add authentication
