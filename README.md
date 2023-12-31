@@ -35,8 +35,15 @@ pnpm run dev
 
 ## 🤝 Contributing
 
-Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/devferx/the-platzi-store/issues). 
+Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/devferx/the-platzi-store/issues).
 
+## Next steps
+[] Fix the navbar position
+[] Add filters
+[] Fix infinity pagination
+[] Add cart view
+[] Add tests with vitest
+[] Add authentication
 
 
 ## Show your support
