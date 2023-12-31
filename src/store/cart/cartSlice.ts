@@ -6,10 +6,14 @@ import { Product } from "@shared/models/product";
 
 export interface CartState {
   items: { [key: string]: CartItem };
+  totalItems: number;
+  totalPrice: number;
 }
 
 const initialState: CartState = {
   items: {},
+  totalItems: 0,
+  totalPrice: 0,
 };
 
 export const cartSlice = createSlice({
@@ -25,9 +29,14 @@ export const cartSlice = createSlice({
       } else {
         state.items[item.id] = { ...item, quantity: 1 };
       }
+
+      state.totalItems++;
+      state.totalPrice += item.price;
     },
     removeProduct: (state, action: PayloadAction<string>) => {
       delete state.items[action.payload];
+      state.totalItems--;
+      state.totalPrice -= state.items[action.payload].price;
     },
   },
 });
