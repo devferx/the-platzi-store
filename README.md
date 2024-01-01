@@ -39,6 +39,7 @@ Contributions, issues and feature requests are welcome!<br />Feel free to check 
 
 ## Next steps
 [X] Fix the navbar position
+[X] Add URL params to the products list
 [] Add filters
 [x] Fix infinity pagination
 [] Add cart view
