@@ -38,7 +38,7 @@ pnpm run dev
 Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/devferx/the-platzi-store/issues).
 
 ## Next steps
-[] Fix the navbar position
+[X] Fix the navbar position
 [] Add filters
 [x] Fix infinity pagination
 [] Add cart view
